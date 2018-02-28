@@ -9,17 +9,15 @@ function allow_to_download() {
           if ($available_downloads > 0) {
                return true;
           }
-          
      }
      return false;
 }
 
 function download_content($content, $id, $atts) {
-     // return $content;
      if( allow_to_download() ) {
           return $content;
      }
-     return "You've exceeded your available download limit for the month";
+     return '<span class="download-locked"><i class="fas fa-lock"></i>Download Locked - Monthly Limit Exceeded</a>';
 }
 
 add_filter('dlm_shortcode_download_content', 'download_content', 10, 3);
