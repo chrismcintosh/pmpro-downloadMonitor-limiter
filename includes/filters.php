@@ -1,7 +1,10 @@
 <?php
 
 function allow_to_download() {
-     // return true;
+    if(current_user_can('administrator') ) {
+        return true;
+    }
+
      global $valid_memberships;
      if (pmpro_hasMembershipLevel($valid_memberships)) {
           check_reset(get_current_user_id());
