@@ -19,8 +19,8 @@ function check_reset($user_id) {
 
      $reset_date = get_user_meta($user_id, 'reset_date', true);
      $reset = false;
-     
-     if (! $reset_date) {    
+
+     if (! $reset_date) {
          $reset  = true;
      } else {
           $now  = time();
@@ -29,18 +29,17 @@ function check_reset($user_id) {
                $reset  = true;
           }
      }
-     
+
      if ($reset){
           reset_monthly_user_filecount( $user_id, time() );
      }
-     
+
 }
 
 function decrement_downloads($dl_id,$version, $file_path) {
      $user_id = get_current_user_id();
      if ($user_id){
           global $valid_memberships;
-          // d(get_current_user_id());
           if (pmpro_hasMembershipLevel($valid_memberships)) {
                $available_downloads = get_user_meta($user_id, 'available_downloads_this_month', true);
                $available_downloads -= 1;

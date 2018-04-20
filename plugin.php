@@ -14,6 +14,6 @@ require_once (__DIR__ . '/settings.php');
 global $valid_memberships;
 
 // TODO - This should pull membership titles in automatically
-$valid_memberships = array('Premiere Membership - Monthly', 'Premiere Membership - Quarterly', 'Premiere Membership - Yearly');
+$valid_memberships = array('1', '2', '4');
 require_once(__DIR__.'/includes/filters.php');
 require_once(__DIR__.'/includes/actions.php');
